@@ -332,6 +332,7 @@ header.sticky{
 }
 
 .row{
+    margin: 2.5%;
     background: #2d343f;
     border-radius: 28px;
     border: 1px solid transparent;
@@ -531,4 +532,36 @@ form .send-btn:hover{
         object-fit: cover;
         margin: 0 auto;
     }
+}
+
+.education li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3%;
+  }
+
+.education h2{
+    font-size: var(--h1-font);
+    margin: 3.7%;
+    text-align: center;
+    
+}
+
+.row2{
+    font-size: 28px;
+    background: #2d343f;
+    border-radius: 10px;
+    border: 1.5px solid transparent;
+    box-shadow: 0 0 5px var(---main-color);
+    padding: 0.7rem;
+    transition: all .50s ease;
+    width: 80rem;
+    height: 25rem;
+}
+
+.row2:hover{
+    border: 1px solid var(---main-color);
+    transform: translateY(-5px) scale(1.03);
+    cursor: pointer;
 }
