@@ -432,10 +432,13 @@ form .send-btn:hover{
 
 @media (max-width: 1380px){
     header{
-        padding: 20px 5%;
+        padding: 10px 5%;
     }
     header.stiky{
-        padding: 14px 5%;
+        padding: 7px 5%;
+    }
+    .logo {
+        font-size: 1.3em; /* Reduz o tamanho da fonte do logo */
     }
     section{
         padding: 90px 5% 80px;
