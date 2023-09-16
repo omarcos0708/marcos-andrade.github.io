@@ -217,6 +217,9 @@ header.sticky {
     object-fit: cover;
     border: 7px solid var(---main-color);
     box-shadow: 0 0 20px var(---main-color);
+    align-items: center;
+    display: block;
+    margin: auto;
 }
 
 .about-text h2 {
@@ -320,10 +323,11 @@ header.sticky {
 
 .portifolio-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    align-items: start; /* alinha os itens ao topo */
     gap: 2.3rem;
     margin-top: 4.2rem;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .row img {
@@ -341,6 +345,7 @@ header.sticky {
     box-shadow: 0 0 5px var(---main-color);
     padding: 20px;
     transition: all .50s ease;
+    min-height: 500px; /* define uma altura mínima para a row */
 }
 
 .main-row {
@@ -351,7 +356,7 @@ header.sticky {
 }
 
 .row h5 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     color: var(--other-color);
 }
@@ -369,7 +374,7 @@ header.sticky {
 }
 
 .row h4 {
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 700;
     margin-bottom: 10px;
     line-height: 1.4;
@@ -431,7 +436,48 @@ form .send-btn:hover {
     cursor: pointer;
 }
 
-@media (max-width: 1380px) {
+.education li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3%;
+}
+
+.education h2 {
+    font-size: var(--h1-font);
+    margin: 3.7%;
+    text-align: center;
+
+}
+
+.row2 {
+    font-size: 28px;
+    background: #2d343f;
+    border-radius: 10px;
+    border: 1.5px solid transparent;
+    box-shadow: 0 0 5px var(---main-color);
+    padding: 0.7rem;
+    transition: all .50s ease;
+    width: 80rem;
+    height: 25rem;
+}
+
+.row2:hover {
+    border: 1px solid var(---main-color);
+    transform: translateY(-5px) scale(1.03);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    .portifolio-content {
+        grid-template-columns: 1fr; /* muda para uma coluna no modo mobile */
+    }
+    .row {
+        height: auto; /* permite que a altura se ajuste ao conteúdo no modo mobile */
+    }
+}
+
+@media (max-width: 1200px) {
     header {
         padding: 10px 5%;
     }
@@ -455,7 +501,7 @@ form .send-btn:hover {
     }
 }
 
-@media (max-width: 1290px) {
+@media (max-width: 1200px) {
     .box {
         padding: 40px 40px 46px;
     }
@@ -471,21 +517,29 @@ form .send-btn:hover {
     }
 }
 
-@media (max-width: 1240px) {
+@media (max-width: 1550px) {
     .about {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+        justify-items: center;
     }
 
     .about-img img {
-        text-align: center;
-        width: 100%;
-        height: 500px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin: 0 auto;
+        width: auto;
     }
+    .about-img {
+        width: 530px;
+        height: 530px;
+        border-radius: 50%;
+        overflow: hidden; /* Isso vai cortar qualquer excesso da imagem */
+    }
+    
+    .about-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Isso vai fazer com que a imagem cubra todo o contêiner */
+    }    
 
     :root {
         --h1-font: 4rem;
@@ -494,7 +548,7 @@ form .send-btn:hover {
     }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1200px) {
     :root {
         --h1-font: 3.5rem;
     }
@@ -531,56 +585,8 @@ form .send-btn:hover {
 
 }
 
-@media (max-width: 680px) {
+@media (max-width: 1200px) {
     .main-content p {
         width: 100%;
     }
-}
-
-@media (max-width: 470px) {
-    :root {
-        --h1-font: 3rem;
-        --h2-font: 2rem;
-    }
-
-    .about-img img {
-        text-align: center;
-        width: 100%;
-        height: 300px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin: 0 auto;
-    }
-}
-
-.education li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 3%;
-}
-
-.education h2 {
-    font-size: var(--h1-font);
-    margin: 3.7%;
-    text-align: center;
-
-}
-
-.row2 {
-    font-size: 28px;
-    background: #2d343f;
-    border-radius: 10px;
-    border: 1.5px solid transparent;
-    box-shadow: 0 0 5px var(---main-color);
-    padding: 0.7rem;
-    transition: all .50s ease;
-    width: 80rem;
-    height: 25rem;
-}
-
-.row2:hover {
-    border: 1px solid var(---main-color);
-    transform: translateY(-5px) scale(1.03);
-    cursor: pointer;
 }
