@@ -1,11 +1,10 @@
 const header = document.querySelector("header");
+const menu = document.querySelector('#menu-icon');
+const navlist = document.querySelector('.navlist');
 
-window.addEventListener ("scroll", function() {
-    header.classList.toggle ("sticky", window.scrollY> 120);
+window.addEventListener("scroll", () => {
+    header.style.opacity = window.pageYOffset > 120 ? "1" : "0";
 });
-
-let menu = document.querySelector('#menu-icon');
-let navlist = document.querySelector('.navlist');
 
 menu.onclick = () => {
     menu.classList.toggle('bx-x');
@@ -13,6 +12,8 @@ menu.onclick = () => {
 }
 
 window.onscroll = () => {
-    menu.classList.remove('bx-x');
-    navlist.classList.remove('active');
+    if (window.scrollY === 0) {
+        menu.classList.remove('bx-x');
+        navlist.classList.remove('active');
+    }
 }
